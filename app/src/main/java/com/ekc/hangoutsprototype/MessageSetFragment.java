@@ -79,6 +79,7 @@ public class MessageSetFragment extends Fragment {
         setupDrawerToggle();
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.message_set_container);
+        mRecyclerView.setHasFixedSize(true);
 
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);

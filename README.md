@@ -8,4 +8,4 @@ Known issues (may be resolved in the future):
  - Conversation UI not polished (just shows the same snippet with a transition to that layout + edit text box)
  - Compose transition not written (would be similar to the transition done in Inbox)
 
-<img src="/images/hangouts.png" height="461px" width="270px">
+<img src="/images/hangouts.png" height="480px" width="270px">

@@ -8,4 +8,7 @@
     <dimen name="navigation_drawer_width">240dp</dimen>
 
     <dimen name="textAppearanceTimestamp">12sp</dimen>
+
+    <dimen name="avatarWidth">72dp</dimen>
+    <dimen name="avatarHeight">72dp</dimen>
 </resources>

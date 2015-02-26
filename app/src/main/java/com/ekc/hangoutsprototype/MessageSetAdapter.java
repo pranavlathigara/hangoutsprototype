@@ -1,8 +1,14 @@
 package com.ekc.hangoutsprototype;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +28,10 @@ public class MessageSetAdapter extends RecyclerView.Adapter<MessageSetAdapter.Vi
     private static final HashMap<String, ArrayList<Message>> MAP = new HashMap<>();
 
     private RecyclerView.LayoutManager mLayoutManager;
+    private Context mContext;
+    private Resources mResources;
+    private float mAvatarWidth;
+
 
     public MessageSetAdapter() {
         for (String d : DATES) {
@@ -40,7 +50,10 @@ public class MessageSetAdapter extends RecyclerView.Adapter<MessageSetAdapter.Vi
         mLayoutManager = new ChildLinearLayoutManager(viewGroup.getContext(),
                 LinearLayoutManager.VERTICAL,
                 false);
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.message_set,
+        mContext = viewGroup.getContext();
+        mResources = mContext.getResources();
+        mAvatarWidth = mResources.getDimension(R.dimen.avatarWidth);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.message_set,
                 viewGroup, false);
 
         ViewHolder vh = new ViewHolder(v);
@@ -49,12 +62,34 @@ public class MessageSetAdapter extends RecyclerView.Adapter<MessageSetAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final ViewHolder viewHolder, int i) {
         String date = DATES[i];
         MessageSnippetAdapter messageSnippetAdapter = new MessageSnippetAdapter(MAP.get(date));
         viewHolder.mDateTextView.setText(date);
         viewHolder.mMessageRecyclerView.setLayoutManager(mLayoutManager);
         viewHolder.mMessageRecyclerView.setAdapter(messageSnippetAdapter);
+        viewHolder.mMessageRecyclerView.setHasFixedSize(true);
+
+        // Add row separators
+        final Paint paint = new Paint();
+        paint.setColor(mResources.getColor(R.color.divider));
+        viewHolder.mMessageRecyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+                super.onDrawOver(c, parent, state);
+                int childCount = parent.getChildCount();
+
+                for (int i = 0; i < childCount; i++) {
+                    View child = parent.getChildAt(i);
+                    float y = child.getHeight() + child.getY();
+                    c.drawLine(child.getX() + mAvatarWidth,
+                            y,
+                            child.getWidth(),
+                            y,
+                            paint);
+                }
+            }
+        });
     }
 
     @Override

@@ -4,4 +4,5 @@
     <color name="theme_accent">#fff</color>
     <color name="windowBackground">#ececec</color>
     <color name="shadow">#505050</color>
+    <color name="divider">#1E000000</color>
 </resources>

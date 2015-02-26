@@ -10,8 +10,8 @@
     android:background="?selectableItemBackground">
 
     <com.ekc.hangoutsprototype.CircleImageView
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="@dimen/avatarWidth"
+        android:layout_height="@dimen/avatarHeight"
         android:padding="16dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"

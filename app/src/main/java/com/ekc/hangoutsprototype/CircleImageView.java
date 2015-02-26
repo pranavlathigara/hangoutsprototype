@@ -33,12 +33,12 @@ public class CircleImageView extends ImageView {
 
     public CircleImageView(Context context) {
         super(context);
-        Log.i(TAG, "constructor 0");
+//        Log.i(TAG, "constructor 0");
     }
 
     public CircleImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Log.i(TAG, "constructor 1");
+//        Log.i(TAG, "constructor 1");
 
         final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CircleImageView);
 
@@ -61,7 +61,7 @@ public class CircleImageView extends ImageView {
     public CircleImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        Log.i(TAG, "constructor 2");
+//        Log.i(TAG, "constructor 2");
     }
 
     @Override

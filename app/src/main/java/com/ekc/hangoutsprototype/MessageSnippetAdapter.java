@@ -75,7 +75,7 @@ public class MessageSnippetAdapter extends RecyclerView.Adapter<MessageSnippetAd
             }
         });
         viewHolder.mImageView.setImageResource(message.mPicResourceId);
-        Log.i(TAG, "bind view height " + viewHolder.mView.getLayoutParams().height);
+//        Log.i(TAG, "bind view height " + viewHolder.mView.getLayoutParams().height);
     }
 
     @Override
