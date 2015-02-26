@@ -23,7 +23,15 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 /**
- * The main Messages Fragment window
+ * The main Messages Fragment window. Creates view that is populated with RecyclerView MessageSets.
+ * Each MessageSet also hosts a RecyclerView of MessageSnippets.
+ *
+ * A set is grouped by date, determined by the DATES array in Message - the dummy grouping is just
+ * "Today, Yesterday, This month."
+ *
+ * The set could have been hardcoded but Inbox "sets" are dynamic - it goes much further beyond
+ * "This month" to every month in the past, so this implementation allows extending dummy Message
+ * data to that capacity just by adding more months in the DATES array in the Messages class.
  */
 public class MessageSetFragment extends Fragment {
     /**
@@ -78,6 +86,8 @@ public class MessageSetFragment extends Fragment {
         mAdapter = new MessageSetAdapter();
         mRecyclerView.setAdapter(mAdapter);
 
+        // TODO: compose has no functionality beyond layout, would be nice to open
+        // a list of contacts to scroll through
         mComposeButton = (ImageButton) rootView.findViewById(R.id.compose_button);
         mComposeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +136,7 @@ public class MessageSetFragment extends Fragment {
             case R.id.action_settings:
                 return true;
             case R.id.search:
+                // TODO: add search, ideally one that looks for html links too
                 CharSequence text = "Executing phase shift...";
                 int duration = Toast.LENGTH_SHORT;
 

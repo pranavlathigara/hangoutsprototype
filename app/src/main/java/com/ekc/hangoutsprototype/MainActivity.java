@@ -12,12 +12,15 @@ import android.view.MenuItem;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.Toast;
 
-
+/**
+ * Hangouts meets Inbox
+ * Erick Chang - 02/25/15
+ * Updated material view for Hangouts with minimal implementation. Intended to carry over some
+ * UI layout/design from Inbox into Hangouts to demonstrate "what Hangouts should look like going
+ * forward".
+ */
 public class MainActivity extends ActionBarActivity implements ComposeFragment.OnFragmentInteractionListener {
 
-    /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
     private NavigationDrawerFragment mNavigationDrawerFragment;
 
 
@@ -33,6 +36,7 @@ public class MainActivity extends ActionBarActivity implements ComposeFragment.O
                 .replace(R.id.container, new MessageSetFragment(),"messageSetFragment")
                 .commit();
 
+        // TODO: implement a drawer
 //        mNavigationDrawerFragment = (NavigationDrawerFragment)
 //                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 //        mTitle = getTitle();

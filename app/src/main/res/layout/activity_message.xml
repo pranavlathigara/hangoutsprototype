@@ -5,9 +5,4 @@
     android:background="?android:windowBackground"
     android:clickable="true">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:foreground="@drawable/action_bar_shadow"/>
-
 </FrameLayout>

@@ -8,9 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by erickchang on 2/19/15.
  * Used as a linear layout manager in a nested childview of another recyclerview
- * for wrap content support
+ * for wrap content support.
  */
 public class ChildLinearLayoutManager extends LinearLayoutManager {
 

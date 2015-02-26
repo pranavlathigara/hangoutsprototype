@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Created by erickchang on 2/17/15.
+ * Dummy data for Messages
  */
 public class Message {
 
@@ -29,10 +29,10 @@ public class Message {
     }
 
     public static final Message[] MESSAGES = {
-            new Message(DATES[0], "4 mins", "Andrew Clark", null, R.drawable.emilio_estevez),
+            new Message(DATES[0], "4 min", "Andrew Clark", null, R.drawable.emilio_estevez),
             new Message(DATES[1], "9:32 PM", "Molly Ringwald",null, R.drawable.claire_standish),
             new Message(DATES[2], "Feb 11", "Brian Johnson", null, R.drawable.anthony_michael_hall),
-            new Message(DATES[0], "42 mins", "John Bender", null, R.drawable.judd_nelson),
+            new Message(DATES[0], "42 min", "John Bender", null, R.drawable.judd_nelson),
             new Message(DATES[0], "11:19 AM", "Allison Reynolds", null, R.drawable.ally_sheedy),
             new Message(DATES[2], "Jan 31", "Richard Vernon", null, R.drawable.paul_gleason),
             new Message(DATES[2], "12/12/14", "Carl", null, R.drawable.john_kapelos),

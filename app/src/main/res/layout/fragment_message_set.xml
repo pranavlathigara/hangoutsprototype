@@ -35,22 +35,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
 
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:foreground="@drawable/action_bar_shadow"/>
-
                 <!--Compose Button-->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
+                    <!--Dimensions chosen to accommodate fixed button image w/ shadow (250px x 250px)-->
                     <ImageButton android:id="@+id/compose_button"
-                        android:layout_height="90dp"
-                        android:layout_width="90dp"
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:layout_margin="10dp"
                         android:scaleType="fitCenter"
-                        android:paddingBottom="16dp"
-                        android:paddingEnd="16dp"
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentEnd="true"
                         android:background="#0000"

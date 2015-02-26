@@ -15,7 +15,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by erickchang on 2/18/15.
+ * Adapter for MessageSnippets, which are items for the RecyclerView inside MessageSets.
+ * MessageSnippets are 3 row items which feature a Sender (From) and 2 line message snippet.
+ * Trigger a transition onClick to open conversation window.
  */
 public class MessageSnippetAdapter extends RecyclerView.Adapter<MessageSnippetAdapter.ViewHolder> {
 

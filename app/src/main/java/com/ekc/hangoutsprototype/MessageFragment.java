@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.AutoTransition;
 import android.transition.Scene;
 import android.transition.TransitionManager;
 import android.util.Log;
@@ -21,7 +22,10 @@ import android.widget.TextView;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * MessageFragment hosts the individual conversation window after clicking on a snippet.
+ * Ideally this should host a ViewPager such that user can swipe left/right to switch between
+ * conversations.
+ * TODO: couple MessageFragment with a ViewPager
  */
 public class MessageFragment extends Fragment implements Animation.AnimationListener {
 
@@ -129,6 +133,8 @@ public class MessageFragment extends Fragment implements Animation.AnimationList
         Animation animation = AnimationUtils.loadAnimation(getActivity(),
                 enter ? android.R.anim.fade_in : android.R.anim.fade_out);
 
+        animation.setDuration(50);
+
         if (animation != null) {
             animation.setAnimationListener(this);
         }
@@ -143,12 +149,15 @@ public class MessageFragment extends Fragment implements Animation.AnimationList
 
     @Override
     public void onAnimationEnd(Animation animation) {
+        // TODO: add conversation list demo w/ speech bubbles
+        // TODO: add emoji / send button next to EditText
         // start transition on animation end
         final Scene scene = Scene.getSceneForLayout((ViewGroup) getView(),
                 R.layout.message_snippet_transition,
                 getActivity());
-        TransitionManager.go(scene);
-        // then bind(scene.getRootScene())
+        AutoTransition autoTransition = new AutoTransition();
+        autoTransition.setDuration(150);
+        TransitionManager.go(scene, autoTransition);
         bind(scene.getSceneRoot());
     }
 

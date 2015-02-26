@@ -3,37 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/message_container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="88dp"
+    android:paddingEnd="16dp"
     android:orientation="horizontal"
-    android:padding="8dp"
     android:clickable="true"
     android:background="?selectableItemBackground">
 
     <com.ekc.hangoutsprototype.CircleImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_vertical"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:padding="16dp"
         android:adjustViewBounds="true"
+        android:cropToPadding="true"
         android:scaleType="centerCrop"
         android:id="@+id/person_image"
         android:src="@drawable/person_image_empty"
         app:maskDrawable="@drawable/circle_mask"/>
 
     <LinearLayout
+        android:id="@+id/text_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxHeight="60dp"
-        android:layout_gravity="center_vertical"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:id="@+id/header_text_layout">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceMedium"
+                android:textAppearance="?textAppearanceListItem"
                 android:id="@+id/from"
                 android:text="Username"/>
 
@@ -41,7 +42,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
                 android:id="@+id/timestamp"
                 android:textSize="@dimen/textAppearanceTimestamp"
                 android:text="4 mins"/>
@@ -51,9 +51,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="18dp"
-            android:maxHeight="36dp"
             android:textAppearance="?android:textAppearanceSmall"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:id="@+id/text"
             android:text="@string/lorem_ipsum"/>
 

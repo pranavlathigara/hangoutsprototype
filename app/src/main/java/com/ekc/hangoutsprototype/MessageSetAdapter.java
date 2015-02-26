@@ -11,6 +11,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * Adapter class for MessageSet RecyclerViews. Each MessageSet also hosts another set of
+ * RecyclerViews (I heard you like to recycle while you recycle...). Custom LinearLayoutManager
+ * needed because nested RecyclerViews will collapse the child views (similar to nested ListViews).
+ */
 public class MessageSetAdapter extends RecyclerView.Adapter<MessageSetAdapter.ViewHolder> {
     private static final String TAG = MessageSetAdapter.class.getSimpleName();
     private static final String[] DATES = Message.DATES;

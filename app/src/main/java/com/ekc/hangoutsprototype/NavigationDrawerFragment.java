@@ -24,6 +24,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 /**
+ * TODO: create a drawer template
+ * Boilerplate code from sample. Not used at the moment.
  * Fragment used for managing interactions for and presentation of a navigation drawer.
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.

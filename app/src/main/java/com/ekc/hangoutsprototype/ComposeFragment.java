@@ -12,12 +12,9 @@ import android.view.animation.AnimationUtils;
 
 
 /**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ComposeFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ComposeFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragment that hosts the compose window when the Compose floating action button is clicked.
+ * Currently opens a translucent white background on top of MessageSetFragment with a small
+ * textview card "Compose" similar to Inbox.
  */
 public class ComposeFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match

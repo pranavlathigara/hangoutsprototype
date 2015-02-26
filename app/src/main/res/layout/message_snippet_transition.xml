@@ -7,10 +7,68 @@
     android:background="?android:windowBackground"
     android:clickable="true">
 
-    <include layout="@layout/message_snippet"
+    <!--Message Snippet Layout -->
+<!--Wrap content instead of 88 dp height-->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/message_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:paddingEnd="16dp"
+        android:orientation="horizontal"
+        android:clickable="true"
+        android:background="?selectableItemBackground">
 
+        <com.ekc.hangoutsprototype.CircleImageView
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:padding="16dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/person_image"
+            android:src="@drawable/person_image_empty"
+            app:maskDrawable="@drawable/circle_mask"/>
+
+        <LinearLayout
+            android:id="@+id/text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/header_text_layout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?textAppearanceListItem"
+                    android:id="@+id/from"
+                    android:text="Username"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/timestamp"
+                    android:textSize="@dimen/textAppearanceTimestamp"
+                    android:text="4 mins"/>
+
+            </RelativeLayout>
+
+            <!--Remove ellipse-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:id="@+id/text"
+                android:text="@string/lorem_ipsum"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--End Message snippet-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,8 +83,8 @@
             android:layout_alignParentBottom="true"
             android:background="#fff">
             <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:padding="8dp"
                 android:scaleType="fitXY"
                 android:src="@mipmap/ic_launcher"/>
@@ -36,13 +94,9 @@
                 android:layout_gravity="center_vertical"
                 android:inputType="textShortMessage"
                 android:imeOptions="actionSend"
-                android:background="#0000"
+                android:textAppearance="?textAppearanceListItemSmall"
                 android:hint="@string/message_hint"/>
         </LinearLayout>
     </RelativeLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:foreground="@drawable/action_bar_shadow"/>
 </FrameLayout>
